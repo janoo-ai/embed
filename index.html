@@ -3,125 +3,112 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dummy Chatbot Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vashi Integrated Solutions Ltd - Jaano Bot</title>
+
     <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             padding: 2rem;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
 
-        /* Custom position for the chatbot */
-        
+        h1 {
+            font-size: 2rem;
+            color: #002147;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive behavior */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            main {
+                box-shadow: none;
+                background: transparent;
+            }
+        }
+
+        /* Optional: chatbot positioning override (just in case) */
+        iframe[src*="jaano.ai"],
+        .jaano-launcher {
+            z-index: 9999 !important;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Welcome to Vashi Integrated Solutions Ltd</h1>
-    <p>Your Jaano bot trained on https://corp.vashiisl.com</p>
+    <main>
+        <h1>Welcome to Vashi Integrated Solutions Ltd</h1>
+        <p>Your Jaano bot trained on <a href="https://corp.vashiisl.com" target="_blank"
+                rel="noopener noreferrer">https://corp.vashiisl.com</a></p>
+    </main>
 
-    <!-- <script>
+    <!-- Jaano Chatbot Embed -->
+    <script>
         window.embeddedChatbotConfig = {
-            chatbotId: '0de45c9e-d503-4e25-8290-de561f4db748',
-            userId: '5d56bc60-afa9-4581-8ad0-bd1cd1642f12',
-            domain: 'http://localhost:3000',
+            chatbotId: '76417b11-3704-4479-93a7-6d77be4e5451',
+            userId: '2af6ec1a-a761-4951-aebc-dd39bbba201e',
+            domain: 'https://jaano.ai',
             queryexpanstion: false,
             reranking: true,
-            clor: 'red',
-            position: 'bottomRight' // This will be overridden by CSS
+            clor: '#002147',
+            position: 'bottomRight'
         };
     </script>
 
-    <script src="http://localhost:3000/chatbot-embedding.js" defer></script> -->
-
-    <!-- Fallback JS in case iframe loads dynamically -->
-    <!-- <script>
-        window.addEventListener('load', function () {
-            const interval = setInterval(() => {
-                const iframe = document.querySelector('iframe[src*="jaano.ai"], .jaano-launcher');
-                if (iframe) {
-                    iframe.style.position = 'fixed';
-                    iframe.style.top = '50%';
-                    iframe.style.right = '0';
-                    iframe.style.transform = 'translateY(-50%)';
-                    iframe.style.zIndex = '9999';
-                    clearInterval(interval);
-                }
-            }, 500); // Check every 500ms until the iframe is found and fixed
-        });
-    </script> -->
-
-    <!-- MutationObserver to detect changes in DOM -->
-    <!-- <script>
-        window.addEventListener('load', function () {
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
-                    const iframe = document.querySelector('iframe[src*="jaano.ai"], .jaano-launcher');
-                    if (iframe) {
-                        iframe.style.position = 'fixed';
-                        iframe.style.top = '50%';
-                        iframe.style.right = '0';
-                        iframe.style.transform = 'translateY(-50%)';
-                        iframe.style.zIndex = '9999';
-                    }
-                });
-            });
-
-            observer.observe(document.body, { childList: true, subtree: true });
-
-            // Also apply position after a small delay in case it's loaded late
-            setTimeout(() => {
-                const iframe = document.querySelector('iframe[src*="jaano.ai"], .jaano-launcher');
-                if (iframe) {
-                    iframe.style.position = 'fixed';
-                    iframe.style.top = '50%';
-                    iframe.style.right = '0';
-                    iframe.style.transform = 'translateY(-50%)';
-                    iframe.style.zIndex = '9999';
-                }
-            }, 1000); // Apply after 1 second
-        });
-    </script> -->
-<!-- <script>
-    window.embeddedChatbotConfig = {
-        chatbotId: '6f8eb4ae-f432-4f0a-9247-f652e4bf145b',
-        userId: '2af6ec1a-a761-4951-aebc-dd39bbba201e',
-        domain: 'https://jaano.ai',
-        queryexpanstion: false,
-        reranking: true,
-        clor: '#002147',
-        position: 'bottomRight'
-    };
-</script>
-
-<script src="https://jaano.ai/chatbot-embedding.js" defer></script> -->
-
-
-<!-- <script>
-    window.embeddedChatbotConfig = {
-        chatbotId: '8493534d-13ec-47e2-8128-7926049250a1',
-        userId: '2af6ec1a-a761-4951-aebc-dd39bbba201e',
-        domain: 'https://jaano.ai',
-        queryexpanstion: false,
-        reranking: true,
-        clor: '#002147',
-        position: 'bottomRight'
-    };
-</script>
-
-<script src="https://jaano.ai/chatbot-embedding.js" defer></script> -->
-<script>
-    window.embeddedChatbotConfig = {
-        chatbotId: '76417b11-3704-4479-93a7-6d77be4e5451',
-        userId: '2af6ec1a-a761-4951-aebc-dd39bbba201e',
-        domain: 'https://jaano.ai',
-        queryexpanstion: false,
-        reranking: true,
-        clor: '#002147',
-        position: 'bottomRight'
-    };
-</script>
-
-<script src="https://jaano.ai/chatbot-embedding.js" defer></script>
+    <script src="https://jaano.ai/chatbot-embedding.js" defer></script>
 </body>
 
 </html>
